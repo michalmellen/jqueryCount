@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <style>
+    
+    html, body {
+      font-family: sans-serif;
+    }
+
+    table {
+      width: 30%;
+        border:1px solid grey;
+        border-collapse:collapse;
+        margin: 2em;
+    }
+
+    tr {
+      height: 2.5em;
+    }
+
+    td {
+       padding: 1em;
+    }
+
+    tbody>tr:nth-child(2),tr:nth-child(4) {
+      background-color: grey;
+      font-weight: bold;
+      color: white;
+    }
+    tr:nth-child(1), tr:nth-child(6) {
+      background-color: darkred;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    </style>
+    <script type="text/javascript">
+
+      var pausalMsuma = 100;
+      function pausalM(){
+
+        $('#pausal').html(pausalMsuma + "€");
+      }
+
+      function pausalL(){
+       $('#pausal').html("40" + "€");
+      }
+
+      var tvMsuma = 50;
+      function tvM(){
+        $('#tv').html(tvMsuma + "€");
+      }
+
+      function tvL(){
+        $('#tv').html("17" + "€");
+      }
+
+window.onclick = function() {
+  var Spolu = $('#spolu');
+  p =  parseInt($('#pausal').text()); //parseInt skonvertuje string na cislo. Nasledne viem cisla spocitat.
+  t =  parseInt($('#tv').text());
+
+    if (p && t) {
+    Spolu.html((p + t) + "€");
+  };
+}
+    </script>
+  </head>
+  <body>
+    <button id="pausalM" class="" onclick="pausalM()">Pausal M</button>
+    <button id="pausalL" class="" onclick="pausalL()">Pausal L</button>
+    <button id="tvM" class="" onclick="tvM()">TV M</button>
+    <button id="tvL" class="" onclick="tvL()">TV L</button>
+    <br>
+
+
+    <table>
+        <tr>
+          <th>Vybrali ste si nasledovny balicek sluzieb:</th>
+        </tr>
+        <tr>
+          <td>Pausal</td>
+        </tr>
+        <tr>
+          <td><p id="pausal" value=""></p></td>
+        </tr>
+        <tr>
+          <td>TV</td>
+        </tr>
+        <tr>
+          <td><p id="tv" value=""></p></td>
+        </tr>
+        <tr>
+          <td>Cena vasho pausalu spolu</td>
+        </tr>
+        <tr>
+          <td><p id="spolu" value=""></p></td>
+        </tr>
+      <tbody>
+
+      </tbody>
+    </table>
+
+  </body>
+
+</html>
